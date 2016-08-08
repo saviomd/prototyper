@@ -1,0 +1,16 @@
+mixin tabPane(tab, screen)
+	.tab-pane(class=(tab.active) ? 'active' : '', id=(screen ? screen.id + '-' : '') + tab.id)
+		if tab.versions
+			ul.nav.nav-tabs.m-a-1
+				each version in tab.versions
+					li.nav-item
+						a.nav-link(class=(version.active ? 'active' : ''), href='#' + tab.id + '-' + version.id, data-toggle='tab')
+							= version.name
+							if (version.favorite === 1)
+								i.fa.fa-star-o
+							else if (version.favorite === 2)
+								i.fa.fa-star
+			.tab-content
+				block
+		else
+			block

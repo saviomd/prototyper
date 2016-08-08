@@ -1,0 +1,15 @@
+script(src='assets/js/vendor.js')
+script.
+
+	// tooltips
+	var $tooltip = $('[data-toggle="tooltip"]');
+	if ($tooltip.length) {
+		$tooltip.tooltip();
+	}
+
+	// trigger tab toggle from links outside of tab
+	$('.js-trigger-tab').on('click', function(e) {
+		e.preventDefault();
+		var id = $(this).attr('href');
+		$('.nav-tabs .nav-link').filter('[href="' + id + '"]').tab('show');
+	});
