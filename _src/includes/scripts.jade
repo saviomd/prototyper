@@ -4,7 +4,7 @@ script.
 	// tooltips
 	var $tooltip = $('[data-toggle="tooltip"]');
 	if ($tooltip.length) {
-		$tooltip.tooltip();
+		$tooltip.tooltip({'html': true});
 	}
 
 	// trigger tab toggle from links outside of tab
