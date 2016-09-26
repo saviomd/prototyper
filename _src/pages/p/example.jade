@@ -1,0 +1,98 @@
+block pageData
+	-
+		var page = {}
+		page.path = ''
+		page.title = 'Title'
+		screens = []
+		screens.push({active: 1, id: 'screen-1', name: 'Screen 1'})
+		screens.push({active: 0, id: 'screen-2', name: 'Screen 2'})
+		screens.push({active: 0, id: 'screen-3', name: 'Screen 3'})
+		screen = screens[0]
+		screen.versions = []
+		screen.versions.push({active: 1, id: screen.id + '-v1', name: 'v1'})
+		screen.versions.push({active: 0, id: screen.id + '-v2', name: 'v2'})
+		screen = screens[1]
+		screen.versions = []
+		screen.versions.push({active: 1, id: screen.id + '-v1', name: 'v1'})
+		screen = screens[2]
+		screen.versions = []
+		screen.versions.push({active: 1, id: screen.id + '-v1', name: 'v1'})
+
+extends /templates/default.jade
+
+block content
+
+	.mixins
+		mixin header
+			div= 'header'
+			hr
+
+		mixin footer
+			hr
+			div= 'footer'
+
+	+navTabs
+
+	.tab-content
+
+		- screen = screens[0]
+		+tabPane(screen)
+
+			- version = screen.versions[0]
+			+tabPane(version, screen)
+				+boxInfo
+					li= screen.name + ', ' + version.name + ', note #1'
+					li= screen.name + ', ' + version.name + ', note #2'
+					li= screen.name + ', ' + version.name + ', note #3'
+				.container
+					+header
+					p= screen.name + ', ' + version.name
+					p
+						img(class='img-fluid', data-src='holder.js/400x300?auto=yes&outline=yes&text=image-1')
+					a.js-trigger-tab(href='##{screens[1].id}')= screens[1].name
+					+footer
+
+			- version = screen.versions[1]
+			+tabPane(version, screen)
+				+boxInfo
+					li= screen.name + ', ' + version.name + ', note #1'
+					li= screen.name + ', ' + version.name + ', note #2'
+					li= screen.name + ', ' + version.name + ', note #3'
+				.container
+					+header
+					p= screen.name + ', ' + version.name
+					a.js-trigger-tab(href='##{screens[1].id}')= screens[1].name
+					+footer
+
+		- screen = screens[1]
+		+tabPane(screen)
+
+			- version = screen.versions[0]
+			+tabPane(version, screen)
+				+boxInfo
+					li= screen.name + ', Note #1'
+					li= screen.name + ', Note #2'
+					li= screen.name + ', Note #3'
+				.container
+					+header
+					p= screen.name + ', ' + version.name
+					a.js-trigger-tab(href='##{screens[2].id}')= screens[2].name
+					+footer
+
+		- screen = screens[2]
+		+tabPane(screen)
+
+			- version = screen.versions[0]
+			+tabPane(version, screen)
+				+boxInfo
+					li= screen.name + ', Note #1'
+					li= screen.name + ', Note #2'
+					li= screen.name + ', Note #3'
+				.container
+					+header
+					p= screen.name + ', ' + version.name
+					+footer
+
+block scripts
+	script.
+		console.log('inline script');

@@ -1,86 +1,9 @@
-block pageData
-	-
-		var page = {}
-		page.path = ''
-		page.title = 'Title'
-		screens = []
-		screens.push({active: 1, id: 'screen-1', name: 'Screen 1'})
-		screens.push({active: 0, id: 'screen-2', name: 'Screen 2'})
-		screens.push({active: 0, id: 'screen-3', name: 'Screen 3'})
-		screen = screens[0]
-		screen.versions = []
-		screen.versions.push({active: 1, id: screen.id + '-v1', name: 'Version 1'})
-		screen.versions.push({active: 0, id: screen.id + '-v2', name: 'Version 2'})
+- redirectUrl = 'p/example.html'
 
-extends /templates/default.jade
-
-block content
-
-	.mixins
-		mixin header
-			div= 'header'
-			hr
-
-		mixin footer
-			hr
-			div= 'footer'
-
-	+navTabs
-
-	.tab-content
-
-		- screen = screens[0]
-		+tabPane(screen)
-
-			- version = screen.versions[0]
-			+tabPane(version, screen)
-				+boxInfo
-					li= screen.name + ', ' + version.name + ', note #1'
-					li= screen.name + ', ' + version.name + ', note #2'
-					li= screen.name + ', ' + version.name + ', note #3'
-				.container
-					+header
-					p= screen.name + ', ' + version.name
-					a.js-trigger-tab(href='##{screens[1].id}')= screens[1].name
-					+footer
-
-			- version = screen.versions[1]
-			+tabPane(version, screen)
-				+boxInfo
-					li= screen.name + ', ' + version.name + ', note #1'
-					li= screen.name + ', ' + version.name + ', note #2'
-					li= screen.name + ', ' + version.name + ', note #3'
-				.container
-					+header
-					p= screen.name + ', ' + version.name
-					a.js-trigger-tab(href='##{screens[1].id}')= screens[1].name
-					+footer
-
-		- screen = screens[1]
-		+tabPane(screen)
-			+boxInfo
-				li= screen.name + ', Note #1'
-				li= screen.name + ', Note #2'
-				li= screen.name + ', Note #3'
-			.container
-				+header
-				p= screen.name
-				a.js-trigger-tab(href='##{screens[2].id}')= screens[2].name
-				+footer
-
-
-		- screen = screens[2]
-		+tabPane(screen)
-			+boxInfo
-				li= screen.name + ', Note #1'
-				li= screen.name + ', Note #2'
-				li= screen.name + ', Note #3'
-			.container
-				+header
-				p= screen.name
-				+footer
-
-block scripts
-	script.
-
-		console.log('inline script');
+doctype html
+html
+	head
+		script.
+			window.location.href = '#{redirectUrl}';
+		noscript
+			meta(http-equiv='refresh', content='0; url=#{redirectUrl}')

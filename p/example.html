@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Title (Prototyper)</title>
+    <link rel="stylesheet" href="../assets/css/vendor.css">
+    <style>
+      .box-info {background-color:#333; border-color:#333; bottom:20px; color:#fff; position:fixed; right:20px; z-index:9}
+      .box-info:hover {width:33%}
+      .box-info__list {display:none}
+      .box-info:hover .box-info__list {display:block}
+    </style>
+  </head>
+  <body>
+    <div class="mixins">
+    </div>
+    <ul class="nav nav-tabs m-a-1">
+      <li class="nav-item"><a href="#screen-1" data-toggle="tab" class="nav-link active">Screen 1</a></li>
+      <li class="nav-item"><a href="#screen-2" data-toggle="tab" class="nav-link">Screen 2</a></li>
+      <li class="nav-item"><a href="#screen-3" data-toggle="tab" class="nav-link">Screen 3</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="screen-1" class="tab-pane active">
+        <ul class="nav nav-tabs m-a-1">
+          <li class="nav-item"><a href="#screen-1-screen-1-v1" data-toggle="tab" class="nav-link active">v1</a></li>
+          <li class="nav-item"><a href="#screen-1-screen-1-v2" data-toggle="tab" class="nav-link">v2</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="screen-1-screen-1-v1" class="tab-pane active">
+            <div class="box-info card card-inverse">
+              <div class="card-block">
+                <ul class="box-info__list">
+                  <li>Screen 1, v1, note #1</li>
+                  <li>Screen 1, v1, note #2</li>
+                  <li>Screen 1, v1, note #3</li>
+                </ul>
+                <div class="text-xs-right">
+                  <div class="fa fa-info-circle"></div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+                    <div>header</div>
+                    <hr>
+              <p>Screen 1, v1</p>
+              <p><img data-src="holder.js/400x300?auto=yes&amp;outline=yes&amp;text=image-1" class="img-fluid"></p><a href="#screen-2" class="js-trigger-tab">Screen 2</a>
+                    <hr>
+                    <div>footer</div>
+            </div>
+          </div>
+          <div id="screen-1-screen-1-v2" class="tab-pane">
+            <div class="box-info card card-inverse">
+              <div class="card-block">
+                <ul class="box-info__list">
+                  <li>Screen 1, v2, note #1</li>
+                  <li>Screen 1, v2, note #2</li>
+                  <li>Screen 1, v2, note #3</li>
+                </ul>
+                <div class="text-xs-right">
+                  <div class="fa fa-info-circle"></div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+                    <div>header</div>
+                    <hr>
+              <p>Screen 1, v2</p><a href="#screen-2" class="js-trigger-tab">Screen 2</a>
+                    <hr>
+                    <div>footer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="screen-2" class="tab-pane">
+        <ul class="nav nav-tabs m-a-1">
+          <li class="nav-item"><a href="#screen-2-screen-2-v1" data-toggle="tab" class="nav-link active">v1</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="screen-2-screen-2-v1" class="tab-pane active">
+            <div class="box-info card card-inverse">
+              <div class="card-block">
+                <ul class="box-info__list">
+                  <li>Screen 2, Note #1</li>
+                  <li>Screen 2, Note #2</li>
+                  <li>Screen 2, Note #3</li>
+                </ul>
+                <div class="text-xs-right">
+                  <div class="fa fa-info-circle"></div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+                    <div>header</div>
+                    <hr>
+              <p>Screen 2, v1</p><a href="#screen-3" class="js-trigger-tab">Screen 3</a>
+                    <hr>
+                    <div>footer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="screen-3" class="tab-pane">
+        <ul class="nav nav-tabs m-a-1">
+          <li class="nav-item"><a href="#screen-3-screen-3-v1" data-toggle="tab" class="nav-link active">v1</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="screen-3-screen-3-v1" class="tab-pane active">
+            <div class="box-info card card-inverse">
+              <div class="card-block">
+                <ul class="box-info__list">
+                  <li>Screen 3, Note #1</li>
+                  <li>Screen 3, Note #2</li>
+                  <li>Screen 3, Note #3</li>
+                </ul>
+                <div class="text-xs-right">
+                  <div class="fa fa-info-circle"></div>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+                    <div>header</div>
+                    <hr>
+              <p>Screen 3, v1</p>
+                    <hr>
+                    <div>footer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/vendor.js"></script>
+    <script>
+      // tooltips
+      var $tooltip = $('[data-toggle="tooltip"]');
+      if ($tooltip.length) {
+      	$tooltip.tooltip({'html': true});
+      }
+      
+      // trigger tab toggle from links outside of tab
+      $('.js-trigger-tab').on('click', function(e) {
+      	e.preventDefault();
+      	var id = $(this).attr('href');
+      	$('.nav-tabs .nav-link').filter('[href="' + id + '"]').tab('show');
+      });
+    </script>
+    <script>console.log('inline script');</script>
+  </body>
+</html>
