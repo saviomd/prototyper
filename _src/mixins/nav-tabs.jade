@@ -1,5 +1,5 @@
 mixin navTabs
-	ul.nav.nav-tabs.m-a-1
+	ul.nav.nav-tabs.m-3
 		each screen in screens
 			li.nav-item
 				a.nav-link(class=(screen.active ? 'active' : ''), href='##{screen.id}', data-toggle='tab')= screen.name
