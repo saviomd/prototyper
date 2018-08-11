@@ -1,0 +1,13 @@
+include /data/site
+include /mixins/box-info
+include /mixins/nav-tabs
+include /mixins/tab-pane
+
+doctype html
+html(lang=site.lang)
+	block pageData
+	include /includes/head
+	body
+		block content
+		include /includes/scripts
+		block scripts

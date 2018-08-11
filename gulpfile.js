@@ -3,8 +3,8 @@ var browserSyncConfig = require('tools-config-saviomd/browser-sync-config');
 var concat = require('gulp-concat');
 var del = require('del');
 var gulp = require('gulp');
-var jade = require('gulp-jade');
-var jadeConfig = require('tools-config-saviomd/jade-config');
+var pug = require('gulp-pug');
+var pugConfig = require('tools-config-saviomd/pug-config');
 
 /*
 tasks
@@ -18,8 +18,8 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('html', function() {
-	return gulp.src('_src/pages/**/*.jade')
-		.pipe(jade(jadeConfig))
+	return gulp.src('_src/pages/**/*.pug')
+		.pipe(pug(pugConfig))
 		.pipe(gulp.dest('./'))
 });
 
@@ -66,5 +66,5 @@ gulp.task('default', ['clean'], function() {
 });
 
 gulp.task('dev', ['browserSync'], function() {
-	gulp.watch('_src/+(data|includes|mixins|pages|templates)/**/*.jade', ['html', browserSync.reload])
+	gulp.watch('_src/+(data|includes|mixins|pages|templates)/**/*.pug', ['html', browserSync.reload])
 });

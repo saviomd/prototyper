@@ -17,18 +17,18 @@
     <div class="mixins">
     </div>
     <ul class="nav nav-tabs m-3">
-      <li class="nav-item"><a href="#screen-1" data-toggle="tab" class="nav-link active">Screen 1</a></li>
-      <li class="nav-item"><a href="#screen-2" data-toggle="tab" class="nav-link">Screen 2</a></li>
-      <li class="nav-item"><a href="#screen-3" data-toggle="tab" class="nav-link">Screen 3</a></li>
+      <li class="nav-item"><a class="nav-link active" href="#screen-1" data-toggle="tab">Screen 1</a></li>
+      <li class="nav-item"><a class="nav-link" href="#screen-2" data-toggle="tab">Screen 2</a></li>
+      <li class="nav-item"><a class="nav-link" href="#screen-3" data-toggle="tab">Screen 3</a></li>
     </ul>
     <div class="tab-content">
-      <div id="screen-1" class="tab-pane active">
+      <div class="tab-pane active" id="screen-1">
         <ul class="nav nav-tabs m-3">
-          <li class="nav-item"><a href="#screen-1-screen-1-v1" data-toggle="tab" class="nav-link active">v1</a></li>
-          <li class="nav-item"><a href="#screen-1-screen-1-v2" data-toggle="tab" class="nav-link">v2</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#screen-1-screen-1-v1" data-toggle="tab">v1</a></li>
+          <li class="nav-item"><a class="nav-link" href="#screen-1-screen-1-v2" data-toggle="tab">v2</a></li>
         </ul>
         <div class="tab-content">
-          <div id="screen-1-screen-1-v1" class="tab-pane active">
+          <div class="tab-pane active" id="screen-1-screen-1-v1">
             <div class="box-info card card-inverse">
               <div class="card-body">
                 <ul class="box-info__list">
@@ -45,12 +45,12 @@
                     <div>header</div>
                     <hr>
               <p>Screen 1, v1</p>
-              <p><img data-src="holder.js/400x300?auto=yes&amp;outline=yes&amp;text=image-1" class="img-fluid"></p><a href="#screen-2" class="js-trigger-tab">Screen 2</a>
+              <p><img class="img-fluid" data-src="holder.js/400x300?auto=yes&amp;outline=yes&amp;text=image-1"></p><a class="js-trigger-tab" href="##{screens[1].id}">Screen 2</a>
                     <hr>
                     <div>footer</div>
             </div>
           </div>
-          <div id="screen-1-screen-1-v2" class="tab-pane">
+          <div class="tab-pane" id="screen-1-screen-1-v2">
             <div class="box-info card card-inverse">
               <div class="card-body">
                 <ul class="box-info__list">
@@ -66,19 +66,19 @@
             <div class="container">
                     <div>header</div>
                     <hr>
-              <p>Screen 1, v2</p><a href="#screen-2" class="js-trigger-tab">Screen 2</a>
+              <p>Screen 1, v2</p><a class="js-trigger-tab" href="##{screens[1].id}">Screen 2</a>
                     <hr>
                     <div>footer</div>
             </div>
           </div>
         </div>
       </div>
-      <div id="screen-2" class="tab-pane">
+      <div class="tab-pane" id="screen-2">
         <ul class="nav nav-tabs m-3">
-          <li class="nav-item"><a href="#screen-2-screen-2-v1" data-toggle="tab" class="nav-link active">v1</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#screen-2-screen-2-v1" data-toggle="tab">v1</a></li>
         </ul>
         <div class="tab-content">
-          <div id="screen-2-screen-2-v1" class="tab-pane active">
+          <div class="tab-pane active" id="screen-2-screen-2-v1">
             <div class="box-info card card-inverse">
               <div class="card-body">
                 <ul class="box-info__list">
@@ -94,19 +94,19 @@
             <div class="container">
                     <div>header</div>
                     <hr>
-              <p>Screen 2, v1</p><a href="#screen-3" class="js-trigger-tab">Screen 3</a>
+              <p>Screen 2, v1</p><a class="js-trigger-tab" href="##{screens[2].id}">Screen 3</a>
                     <hr>
                     <div>footer</div>
             </div>
           </div>
         </div>
       </div>
-      <div id="screen-3" class="tab-pane">
+      <div class="tab-pane" id="screen-3">
         <ul class="nav nav-tabs m-3">
-          <li class="nav-item"><a href="#screen-3-screen-3-v1" data-toggle="tab" class="nav-link active">v1</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#screen-3-screen-3-v1" data-toggle="tab">v1</a></li>
         </ul>
         <div class="tab-content">
-          <div id="screen-3-screen-3-v1" class="tab-pane active">
+          <div class="tab-pane active" id="screen-3-screen-3-v1">
             <div class="box-info card card-inverse">
               <div class="card-body">
                 <ul class="box-info__list">

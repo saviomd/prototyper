@@ -1,3 +1,5 @@
+extends /templates/default
+
 block pageData
 	-
 		var page = {}
@@ -17,8 +19,6 @@ block pageData
 		screen = screens[2]
 		screen.versions = []
 		screen.versions.push({active: 1, id: screen.id + '-v1', name: 'v1'})
-
-extends /templates/default.jade
 
 block content
 
