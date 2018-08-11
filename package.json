@@ -1,6 +1,6 @@
 {
   "name": "prototyper",
-  "version": "1.0.20180104",
+  "version": "1.0.20180811",
   "description": "HTML prototyper",
   "author": "Sávio Mendes",
   "license": "UNLICENSED",
@@ -14,18 +14,18 @@
     "start": "gulp dev"
   },
   "dependencies": {
-    "animate.css": "^3.5.2",
-    "bootstrap": "^4.0.0-beta.3",
-    "browser-sync": "^2.23.2",
+    "animate.css": "^3.7.0",
+    "bootstrap": "^4.1.3",
+    "browser-sync": "^2.24.6",
     "del": "^3.0.0",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-jade": "^1.1.0",
     "holderjs": "^2.9.4",
-    "hover.css": "^2.2.1",
-    "jquery": "^3.2.1",
-    "popper.js": "^1.13.0",
+    "hover.css": "^2.3.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4",
     "tools-config-saviomd": "github:saviomd/tools-config-saviomd",
     "wowjs": "^1.1.3"
   }
